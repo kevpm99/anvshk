@@ -1,0 +1,4 @@
+<launch>
+<node pkg="learning_tf" type="odo_pub.py" name="odo" output="screen" />
+<node pkg="learning_tf" type="turtle_tf_broadcaster.py" name="tfbro" />
+</launch>

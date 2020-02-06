@@ -1,0 +1,13 @@
+<launch>
+   <master auto="start"/>
+<!--   <node pkg="map_server" type="map_server" name="map_server" args="$(find learning_tf)/params/map_params.yaml" /> -->
+   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+   <rosparam file="$(find learning_tf)/params/cost_common_params.yaml" command="load" ns="global_costmap" />
+   <rosparam file="$(find learning_tf)/params/cost_common_params.yaml" command="load" ns="local_costmap" />
+   <rosparam file="$(find learning_tf)/params/cost_local_params.yaml" command="load"/>
+   <rosparam file="$(find learning_tf)/params/cost_global_params.yaml" command="load"/>
+   <rosparam file="$(find learning_tf)/params/planner_params.yaml" command="load"/>
+   </node>
+   <node pkg="learning_tf" type="base_controller.py" name="base_controller"/>
+</launch>
+	

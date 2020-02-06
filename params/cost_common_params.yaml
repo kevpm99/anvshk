@@ -1,0 +1,5 @@
+obstacle_range: 9.0
+raytrace_range: 9.0
+robot_radius: 0.2
+inflation_radius: 0.55
+
