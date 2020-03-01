@@ -9,7 +9,7 @@ def listener():
 	rospy.Subscriber('/turtle1/pose',Pose,odo)
 	rospy.spin()
 def odo(pose):
-	pub=rospy.Publisher('odo',Odometry,queue_size=1)
+	pub=rospy.Publisher('odom',Odometry,queue_size=1)
 	odom= Odometry()
 	odom.header.stamp=rospy.Time.now()
 	odom.header.frame_id='turtle1'
